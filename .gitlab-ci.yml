@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+deploy_sap:
+  stage: deploy
+  script:
+    - terraform init
+    - terraform apply -auto-approve
+    - ansible-playbook -i inventory ansible/setup-sap.yml

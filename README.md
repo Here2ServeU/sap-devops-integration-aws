@@ -10,7 +10,7 @@ Enable SAP infrastructure provisioning and automation in the cloud (AWS) using D
 ## Folder Structure
 
 ```
-sap-devops-integration/
+sap-devops-integration-aws/
 ├── terraform/           # Terraform code for AWS infrastructure
 ├── ansible/             # Ansible playbook for SUSE Linux setup
 ├── monitoring/          # Node Exporter, Prometheus, Grafana setup (placeholder)
@@ -29,8 +29,8 @@ sap-devops-integration/
 - SUSE Linux AMI or compatible EC2 AMI
 - Git clone or unzip this repo:
   ```bash
-  git clone https://github.com/yourusername/sap-devops-integration.git
-  cd sap-devops-integration
+  git clone https://github.com/Here2ServeU/sap-devops-integration-aws.git
+  cd sap-devops-integration-aws
   ```
 
 ---

@@ -1,0 +1,14 @@
+---
+- name: Prepare SUSE Linux for SAP
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install required packages
+      zypper:
+        name: ['uuidd', 'libaio', 'gcc']
+        state: present
+
+    - name: Ensure uuidd is running
+      service:
+        name: uuidd
+        state: started
