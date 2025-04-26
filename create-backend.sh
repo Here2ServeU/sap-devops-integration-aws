@@ -7,7 +7,12 @@ REGION="us-east-1"
 
 # Create S3 bucket
 echo "Creating S3 bucket: $BUCKET_NAME"
-aws s3api create-bucket --bucket $BUCKET_NAME --region $REGION --create-bucket-configuration LocationConstraint=$REGION
+
+if [ "$REGION" == "us-east-1" ]; then
+  aws s3api create-bucket --bucket $BUCKET_NAME
+else
+  aws s3api create-bucket --bucket $BUCKET_NAME --region $REGION --create-bucket-configuration LocationConstraint=$REGION
+fi
 
 # Enable versioning
 echo "Enabling versioning on S3 bucket"
@@ -20,6 +25,6 @@ aws dynamodb create-table \
   --attribute-definitions AttributeName=LockID,AttributeType=S \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
-  --region $REGION
+  --region $REGION || echo "DynamoDB table $DYNAMODB_TABLE already exists, skipping."
 
-echo "S3 bucket and DynamoDB table created successfully!"
+echo "S3 bucket and DynamoDB table creation process finished!"
