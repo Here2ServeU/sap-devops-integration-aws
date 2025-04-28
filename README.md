@@ -88,9 +88,7 @@ Connect Prometheus to the EC2 public IP at port 9100. Visualize metrics via Graf
 ## Resources
 
 - SAP HANA Quick Start Guide (AWS): https://aws.amazon.com/quickstart/architecture/sap-hana/
-- GitHub: AWS QuickStart for SAP: https://github.com/aws-quickstart/quickstart-sap-hana
 - SAP Learning Hub: https://learning.sap.com/
-- SAP on SUSE Linux Video: https://www.youtube.com/watch?v=xiPvE3RKU-w
 
 ## <div align="center">About the Author</div>
 
